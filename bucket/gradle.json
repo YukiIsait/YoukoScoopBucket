@@ -1,0 +1,65 @@
+{
+    "version": "8.3",
+    "description": "An open-source build automation tool focused on flexibility and performance. (Binaries only without documentation)",
+    "homepage": "https://gradle.org",
+    "license": "Apache-2.0",
+    "suggest": {
+        "JDK": "java/openjdk"
+    },
+    "url": "https://services.gradle.org/distributions/gradle-8.3-bin.zip",
+    "hash": "591855b517fc635b9e04de1d05d5e76ada3f89f5fc76f87978d1b245b4f69225",
+    "extract_dir": "gradle-8.3",
+    "post_install": [
+        "$gradle_init_content = @'",
+        "allprojects {",
+        "    repositories {",
+        "        mavenLocal()",
+        "        maven {",
+        "            name = \"Alibaba\"",
+        "            url = uri(\"https://maven.aliyun.com/repository/public\")",
+        "        }",
+        "        maven {",
+        "            name = \"Bstek\"",
+        "            url = uri(\"https://nexus.bsdn.org/content/groups/public/\")",
+        "        }",
+        "        mavenCentral()",
+        "    }",
+        "    buildscript {",
+        "        repositories {",
+        "            maven {",
+        "                name = \"Alibaba\"",
+        "                url = uri(\"https://maven.aliyun.com/repository/public\")",
+        "            }",
+        "            maven {",
+        "                name = \"Bstek\"",
+        "                url = uri(\"https://nexus.bsdn.org/content/groups/public/\")",
+        "            }",
+        "            maven {",
+        "                name = \"M2\"",
+        "                url = uri(\"https://plugins.gradle.org/m2/\")",
+        "            }",
+        "        }",
+        "    }",
+        "}",
+        "'@ -replace \"`r?`n\", \"`r`n\"",
+        "if (-not (Test-Path \"$persist_dir\\.gradle\\init.gradle.kts\")) {",
+        "    Set-Content -Value $gradle_init_content -Path \"$persist_dir\\.gradle\\init.gradle.kts\"",
+        "}"
+    ],
+    "env_set": {
+        "GRADLE_USER_HOME": "$persist_dir\\.gradle"
+    },
+    "persist": ".gradle",
+    "bin": "bin\\gradle.bat",
+    "checkver": {
+        "url": "https://gradle.org/install/",
+        "regex": "The current Gradle release is version ([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://services.gradle.org/distributions/gradle-$version-bin.zip",
+        "hash": {
+            "url": "$url.sha256"
+        },
+        "extract_dir": "gradle-$version"
+    }
+}
