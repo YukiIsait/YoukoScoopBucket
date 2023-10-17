@@ -10,5 +10,5 @@ A Bucket for the Best Windows Package Manager [Scoop](https://github.com/ScoopIn
 For ones familiar with Scoop:
 
 ```powershell
-scoop bucket add youko https://github.com/ArcticYouko/YoukoScoopBucket
+scoop bucket add youko https://github.com/YukiIsait/YoukoScoopBucket
 ```
