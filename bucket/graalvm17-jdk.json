@@ -1,10 +1,10 @@
 {
     "description": "High-performance, embeddable, polyglot Virtual Machine for JVM-langs (Java, Scala, Kotlin), JavaScript/NodeJS, Python, Ruby, R, and LLVM-langs (C, C++, Rust)",
-    "version": "21",
+    "version": "17.0.7",
     "homepage": "https://www.graalvm.org/",
     "license": "https://www.oracle.com/downloads/licenses/graal-free-license.html",
-    "url": "https://download.oracle.com/graalvm/21/archive/graalvm-jdk-21_windows-x64_bin.zip",
-    "hash": "392acacbdae30487050968892b22ef05d2dc29b7e25816e16c5080795a813c82",
+    "url": "https://download.oracle.com/graalvm/17/archive/graalvm-jdk-17.0.7_windows-x64_bin.zip",
+    "hash": "1ef3705fef76554bba792075df2f206237bd9d8603a4fc5ebb45a67ceb1e20d9",
     "extract_to": "tmp",
     "installer": {
         "script": [
@@ -18,12 +18,12 @@
         "GRAALVM_HOME": "$dir"
     },
     "checkver": {
-        "url": "https://www.oracle.com/java/technologies/javase/graalvm-jdk21-archive-downloads.html",
+        "url": "https://www.oracle.com/java/technologies/javase/graalvm-jdk17-archive-downloads.html",
         "useragent": "GraalVM/$version",
         "regex": "GraalVM for Java Development Kit ([\\d.]+)"
     },
     "autoupdate": {
-        "url": "https://download.oracle.com/graalvm/21/archive/graalvm-jdk-$version_windows-x64_bin.zip",
+        "url": "https://download.oracle.com/graalvm/17/archive/graalvm-jdk-$version_windows-x64_bin.zip",
         "hash": {
             "url": "$url.sha256"
         }
