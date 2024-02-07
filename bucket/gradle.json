@@ -12,11 +12,10 @@
     "post_install": [
         "$gradle_init_content = @'",
         "val customRepositoryUrls = arrayOf(",
+        "    \"https://repo.huaweicloud.com/repository/maven/\",",
         "    \"https://maven.aliyun.com/repository/google/\",",
         "    \"https://maven.aliyun.com/repository/public/\",",
-        "    \"https://maven.aliyun.com/repository/gradle-plugin/\",",
-        "    \"https://repo.huaweicloud.com/repository/maven/\",",
-        "    \"https://repo.maven.apache.org/maven2/\"",
+        "    \"https://maven.aliyun.com/repository/gradle-plugin/\"",
         ")",
         "",
         "settingsEvaluated {",
