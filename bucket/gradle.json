@@ -14,7 +14,7 @@
         "val customRepositoryUrls = arrayOf(",
         "    \"https://maven.aliyun.com/repository/google/\",",
         "    \"https://maven.aliyun.com/repository/public/\",",
-        "    \"https://maven.aliyun.com/repository/gradle-plugin/\"",
+        "    \"https://maven.aliyun.com/repository/gradle-plugin/\",",
         "    \"https://repo.huaweicloud.com/repository/maven/\",",
         "    \"https://repo.maven.apache.org/maven2/\"",
         ")",
